@@ -126,3 +126,41 @@ class MesaDulce inherits Desayuno{
 		return dulces.sum({p=>p.peso()})
 	}
 }
+
+class Cliente{
+	var property credito = 1000
+	var property tipo
+	var property comproAlgo = false
+	
+	
+	method puedeComprar(){
+		patisserie.menu().filter({x=>(tipo.leGusta(x)&& x.precio() <= self.credito())})
+	}
+	
+	method decideComprar(){
+		patisserie.menu().head()
+	}
+	
+}
+
+object naturista{
+	method leGusta(dulce) = dulce.esNatural()
+}
+
+object chefPadawan{
+	method leGusta(dulce) = (dulce.esEspecial() or dulce.valoracion() > 100)
+}
+
+object todoVale{
+	method leGusta(dulce){}
+}
+
+object patisserie{
+	var property clientes = []
+	var property menu = []
+	
+	method promocion() {
+		clientes.all({c=>(c.credito()+700)})
+	}
+}
+
