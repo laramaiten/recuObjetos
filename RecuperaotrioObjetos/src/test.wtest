@@ -1,0 +1,29 @@
+import example.*
+
+describe "pattiserie"{
+	 
+	//const coockie = new Alfajor(peso = 100, relleno = "miel")
+	//const queso = new PorcionesDeTorta(peso = 100)
+	//const mesaDul =
+	const fabian = new Cliente(credito = 1000, tipo ="naturista",comproAlgo = true)
+	const enrique = new Cliente(credito = 1000, tipo ="todoVale",comproAlgo = false)
+	test "mesaDulce con tres productos" {
+		const fresa = new Desayuno(new Macarron(peso = 10, cobertura = false))
+		assert.equals(true)
+	
+	}
+
+	test "clientese da el gusto" {
+		enrique.puedeComprar()
+		enrique.decideComprar()
+		assert.equals(true)
+	
+	}
+	test "cliente no puede comprar" {
+		fabian.puedeComprar()
+		fabian.decideComprar()
+		assert.equals(true)
+	
+	}	
+
+}
