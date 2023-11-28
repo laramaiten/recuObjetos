@@ -128,7 +128,7 @@ class MesaDulce inherits Desayuno{
 }
 
 class Cliente{
-	var property credito = 1000
+	var property credito 
 	var property tipo
 	var property comproAlgo = false
 	
@@ -138,7 +138,7 @@ class Cliente{
 	}
 	
 	method decideComprar(){
-		patisserie.menu().head()
+		credito = (credito - patisserie.menu().head().precio())
 	}
 	
 }
